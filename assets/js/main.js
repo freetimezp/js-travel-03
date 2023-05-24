@@ -34,3 +34,32 @@ function hideLoginForm() {
 formClose.addEventListener('click', hideLoginForm);
 
 loginBtn.addEventListener('click', showLoginForm);
+
+//slider
+const videos = document.querySelectorAll('.video');
+const nextEl = document.querySelector('.next');
+const prevEl = document.querySelector('.prev');
+
+const country = document.querySelector('.big-text');
+let countries = ["Egypt", "Turkey", "Sea", "Luxury", "Beach"];
+let index = 0;
+let counter = 0;
+
+function showNextVideo(e) {
+    videos[counter].classList.remove('live');
+    counter = (counter + 1) % videos.length;
+    videos[counter].classList.add('live');
+    index = (index + 1) % countries.length;
+    country.innerHTML = countries[index];
+}
+
+function showPrevVideo(e) {
+    videos[counter].classList.remove('live');
+    counter = (counter - 1 + videos.length) % videos.length;
+    videos[counter].classList.add('live');
+    index = (index - 1 + countries.length) % countries.length;
+    country.innerHTML = countries[index];
+}
+
+nextEl.addEventListener('click', showNextVideo);
+prevEl.addEventListener('click', showPrevVideo);
