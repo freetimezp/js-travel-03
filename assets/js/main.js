@@ -17,3 +17,20 @@ function showMenu() {
 }
 
 menuBar.addEventListener('click', showMenu);
+
+//show login menu
+const formCon = document.querySelector('.login-form-container');
+const form = document.getElementById('form');
+const formClose = document.getElementById('form-close');
+
+function showLoginForm() {
+    formCon.style.top = '0px';
+}
+
+function hideLoginForm() {
+    formCon.style.top = '-100%';
+}
+
+formClose.addEventListener('click', hideLoginForm);
+
+loginBtn.addEventListener('click', showLoginForm);
