@@ -29,6 +29,19 @@ body {
     --green-color: #40916c;
 }
 
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--gray-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 0.4rem;
+}
+
 h1, h2, h3 {
     margin-top: 0;
 }
@@ -50,7 +63,16 @@ a {
 
 .container {
     padding: 7rem 9%;
-  }
+}
+
+.heading span {
+    font-size: 3rem;
+    text-transform: uppercase;
+    background-color: var(--hover-color);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
 
 /* main end */
 
@@ -343,8 +365,72 @@ header {
 /* home end */
 
 
+/* book start */
+.heading {
+    text-align: center;
+}
+
+.heading span.space {
+    background: none;
+}
+
+.book .row {
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.book .row div {
+    flex: 50%;
+    width: 100%;
+}
+
+.book__row-image img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.book__row-form {
+    padding: 1rem;
+    box-shadow: 0 10px 20px hsla(0, 0%, 0%, .2);
+    border-radius: 0.3rem;
+}
+
+.row h3 {
+    color: #666;
+    margin-bottom: 0.6rem;
+}
+
+.book__row-form .inputBox input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #c8c8c8;
+    outline: none;
+    color: #333;
+    margin-bottom: 1rem; 
+}
+
+.book .row .btn {
+    width: fit-content;
+    background-color: var(--main-color);
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 0;
+}
+
+.book .row .btn:hover {
+    background-color: var(--hover-color);
+}
+/* book end */
+
+
+
+
 /* responsive start */
 @media (max-width: 1199px) {
+    .container {
+        padding: 7rem 5%;
+    }
     #menu-bar {
         display: initial;
     }
@@ -398,11 +484,25 @@ header {
     .login-form-container form {
         width: calc(100% - 6rem);
     }
+
+    .book .row {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 600px) {
     html {
         font-size: 73%;
+    }
+
+    .heading span {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .heading span {
+        font-size: 1.4rem;
     }
 }
 /* responsive end */
