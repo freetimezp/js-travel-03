@@ -421,9 +421,104 @@ header {
 .book .row .btn:hover {
     background-color: var(--hover-color);
 }
+
 /* book end */
 
 
+
+/* packages start */
+.packages {
+    background-color: #f7f8fa;
+}
+
+.packages__parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  
+    gap: 1rem;
+    margin-top: 4rem;
+}
+
+.packages__parent .box {
+    background-color: var(--white);
+    border-radius: 0.9375rem;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.packages__box-image {
+    overflow: hidden;
+    flex-basis: 60%;
+}
+
+.packages__box-image img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.9375rem 0.9375rem 0 0;
+    transition: var(--main-transition);
+}
+
+.packages__box-image img:hover {
+    transform: scale(1.1);
+}
+
+.packages__box-content-item {
+    flex-basis: 40%;
+}
+
+.packages__box-content-item {
+    padding: 1.25rem;
+    line-height: 1.5;
+}
+
+.packages__box-content-item i {
+    color: #ffb21d;
+}
+
+.packages__box-content-item h4 {
+    font-size: 1.6rem;
+}
+
+.packages__box-content-item h4 i {
+    padding-right: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.packages__box-content-item p {
+    color: gray;
+    margin-bottom: 0.5rem;
+}
+
+.reviews .rate {
+    font-weight: bold;
+}
+
+.price {
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.price span {
+    text-decoration: line-through;
+    color: gray;
+    font-size: 1rem;
+}
+
+.packages__parent .btn {
+    background-color: var(--main-color);
+    padding: 0.5rem 1.5rem;
+}
+
+.packages__parent .btn:hover {
+    background-color: var(--hover-color);
+}
+
+/* packages end */
 
 
 /* responsive start */
@@ -463,6 +558,10 @@ header {
     .header__icons i {
         box-shadow: none;
     }
+
+    .packages__parent {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (min-width: 1199px) {
@@ -487,6 +586,10 @@ header {
 
     .book .row {
         flex-direction: column;
+    }
+
+    .packages__parent {
+        grid-template-columns: 1fr;
     }
 }
 
